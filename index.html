@@ -1,0 +1,248 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="UTF-8" />
+<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+<title>사랑개비</title>
+
+<style>
+    body {
+        margin: 0;
+        font-family: -apple-system, BlinkMacSystemFont, "Noto Sans KR", sans-serif;
+        background: linear-gradient(180deg, #ffd6e7, #ffeef4);
+        color: #b60042;
+        padding: 20px;
+    }
+
+    .container {
+        max-width: 480px;
+        margin: auto;
+        background: white;
+        padding: 25px 20px;
+        border-radius: 18px;
+        box-shadow: 0 4px 15px rgba(255, 80, 140, 0.2);
+    }
+
+    h1 {
+        text-align: center;
+        font-size: 32px;
+        margin-bottom: 5px;
+        font-weight: 900;
+        color: #d60059;
+    }
+
+    .subtitle {
+        text-align: center;
+        font-size: 14px;
+        margin-bottom: 18px;
+        color: #e95f88;
+    }
+
+    .desc {
+        font-size: 13px;
+        text-align: center;
+        color: #c85d82;
+        margin-bottom: 22px;
+        line-height: 1.6;
+    }
+
+    label {
+        font-size: 16px;
+        font-weight: 600;
+        display: block;
+        margin-bottom: 8px;
+        color: #b60042;
+    }
+
+    .question-block {
+        margin-bottom: 24px;
+    }
+
+    input[type="text"], textarea {
+        width: 100%;
+        padding: 12px;
+        border-radius: 10px;
+        border: 1.6px solid #ff9bbd;
+        outline: none;
+        font-size: 15px;
+        background: #fff6fa;
+    }
+
+    .radio-group, .checkbox-group {
+        margin-top: 6px;
+    }
+
+    .radio-group label, .checkbox-group label {
+        display: block;
+        margin-bottom: 6px;
+        font-weight: 500;
+    }
+
+    .submit-btn {
+        width: 100%;
+        padding: 14px;
+        background: #ff4d88;
+        border: none;
+        border-radius: 14px;
+        font-size: 18px;
+        color: white;
+        margin-top: 4px;
+        cursor: pointer;
+        font-weight: 700;
+        box-shadow: 0 3px 8px rgba(255, 80, 140, 0.28);
+    }
+
+    .submit-btn:active {
+        transform: translateY(1px);
+        box-shadow: 0 1px 4px rgba(255, 80, 140, 0.25);
+    }
+
+    small {
+        font-size: 12px;
+        color: #c27590;
+    }
+</style>
+</head>
+
+<body>
+<div class="container">
+    <h1>사랑개비</h1>
+    <div class="subtitle">사랑은 바람개비를 타고</div>
+    <div class="desc">
+        가천대학교 학생들을 위한 매칭 프로젝트입니다.<br />
+        당신은 어떤 사람이고, 어떤 사람에게 끌리나요?<br />
+        응답은 매칭 외 다른 용도로 사용되지 않습니다.
+    </div>
+
+    <form id="loveForm">
+
+        <!-- Q1 -->
+        <div class="question-block">
+            <label>성별을 선택해 주세요.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="gender" value="남자" required> 남자</label>
+                <label><input type="radio" name="gender" value="여자" required> 여자</label>
+                <label><input type="radio" name="gender" value="선택하지 않음" required> 선택하지 않음</label>
+            </div>
+        </div>
+
+        <!-- Q2 -->
+        <div class="question-block">
+            <label>나이를 선택해 주세요.</label>
+            <div class="radio-group">
+                <label><input type="radio" name="age" value="20" required> 20</label>
+                <label><input type="radio" name="age" value="21" required> 21</label>
+                <label><input type="radio" name="age" value="22" required> 22</label>
+                <label><input type="radio" name="age" value="23" required> 23</label>
+                <label><input type="radio" name="age" value="24 이상" required> 24 이상</label>
+            </div>
+        </div>
+
+        <!-- Q3 -->
+        <div class="question-block">
+            <label>어떤 나이대의 상대를 선호하나요?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="preferAge" value="비슷한 또래" required> 나와 비슷한 또래(±1살)</label>
+                <label><input type="radio" name="preferAge" value="상관없음" required> 상관없음</label>
+                <label><input type="radio" name="preferAge" value="좀 더 어린 느낌" required> 나보다 조금 어린 느낌</label>
+                <label><input type="radio" name="preferAge" value="좀 더 어른 느낌" required> 나보다 조금 어른 느낌</label>
+            </div>
+        </div>
+
+        <!-- Q4 SELF TYPE -->
+        <div class="question-block">
+            <label>나를 한 단어로 표현한다면 가장 가까운 TYPE은 무엇인가요?</label>
+            <div class="radio-group">
+                <label><input type="radio" name="selfType" value="시크한" required> 시크한</label>
+                <label><input type="radio" name="selfType" value="활발한" required> 활발한</label>
+                <label><input type="radio" name="selfType" value="조용한" required> 조용한</label>
+                <label><input type="radio" name="selfType" value="장난 많은" required> 장난 많은</label>
+                <label><input type="radio" name="selfType" value="감성적인" required> 감성적인</label>
+                <label><input type="radio" name="selfType" value="공부 열심히 하는" required> 공부 열심히 하는</label>
+                <label><input type="radio" name="selfType" value="운동 좋아하는" required> 운동 좋아하는</label>
+                <label><input type="radio" name="selfType" value="귀여운 느낌" required> 귀여운 느낌</label>
+            </div>
+        </div>
+
+        <!-- Q5 IDEAL TYPE -->
+        <div class="question-block">
+            <label>나는 어떤 TYPE의 사람에게 끌리는 편인가요? <small>(최대 2개 선택)</small></label>
+            <div class="checkbox-group">
+                <label><input type="checkbox" name="idealType" value="시크한"> 시크한</label>
+                <label><input type="checkbox" name="idealType" value="활발한"> 활발한</label>
+                <label><input type="checkbox" name="idealType" value="조용한"> 조용한</label>
+                <label><input type="checkbox" name="idealType" value="장난 많은"> 장난 많은</label>
+                <label><input type="checkbox" name="idealType" value="감성적인"> 감성적인</label>
+                <label><input type="checkbox" name="idealType" value="공부 열심히 하는"> 공부 열심히 하는</label>
+                <label><input type="checkbox" name="idealType" value="운동 좋아하는"> 운동 좋아하는</label>
+                <label><input type="checkbox" name="idealType" value="귀여운 느낌"> 귀여운 느낌</label>
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="question-block">
+            <label>매칭 시 전달할 연락처(카카오톡 ID 또는 인스타그램)</label>
+            <input type="text" name="contact" required />
+        </div>
+
+        <!-- EXTRA -->
+        <div class="question-block">
+            <label>매칭에 참고되었으면 하는 말이 있다면 자유롭게 적어 주세요. (선택)</label>
+            <textarea name="extra" rows="3"></textarea>
+        </div>
+
+        <button class="submit-btn" type="submit">제출하기</button>
+    </form>
+</div>
+
+<script>
+const SCRIPT_URL = "https://script.google.com/macros/s/AKfycbzm9p3JgLKjOI_OtZBXTnBsmDlC20lVDjP9JIjDLB5e9DzHwZar5tmSP-W4yyY00HaV/exec";
+
+document.getElementById("loveForm").addEventListener("submit", async function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    // IDEAL TYPE 최대 2개 체크 제한
+    const ideals = formData.getAll("idealType");
+    if (ideals.length === 0) {
+        alert("끌리는 TYPE을 최소 1개 이상 선택해 주세요.");
+        return;
+    }
+    if (ideals.length > 2) {
+        alert("끌리는 TYPE은 최대 2개까지만 선택할 수 있어요 :)");
+        return;
+    }
+
+    const data = {
+        gender: formData.get("gender"),
+        age: formData.get("age"),
+        preferAge: formData.get("preferAge"),
+        selfType: formData.get("selfType"),
+        idealType: ideals,
+        contact: formData.get("contact"),
+        extra: formData.get("extra") || ""
+    };
+
+    try {
+        const res = await fetch(SCRIPT_URL, {
+            method: "POST",
+            headers: {"Content-Type": "application/json"},
+            body: JSON.stringify(data)
+        });
+
+        if (!res.ok) throw new Error("network");
+
+        alert("제출이 완료되었습니다!\n운영자가 확인 후 매칭을 도와드릴게요 :)");
+        form.reset();
+        window.scrollTo({top: 0, behavior: "smooth"});
+    } catch (err) {
+        alert("제출에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+        console.error(err);
+    }
+});
+</script>
+
+</body>
+</html>
