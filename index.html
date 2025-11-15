@@ -226,19 +226,18 @@ document.getElementById("loveForm").addEventListener("submit", async function(e)
     };
 
     try {
-        const res = await fetch(SCRIPT_URL, {
+        await fetch(SCRIPT_URL, {
             method: "POST",
+            mode: "no-cors",   // ← 핵심 수정
             headers: {"Content-Type": "application/json"},
             body: JSON.stringify(data)
         });
-
-        if (!res.ok) throw new Error("network");
 
         alert("제출이 완료되었습니다!\n운영자가 확인 후 매칭을 도와드릴게요 :)");
         form.reset();
         window.scrollTo({top: 0, behavior: "smooth"});
     } catch (err) {
-        alert("제출에 실패했습니다. 잠시 후 다시 시도해 주세요.");
+        alert("제출에 실패했습니다. 다시 시도해 주세요.");
         console.error(err);
     }
 });
